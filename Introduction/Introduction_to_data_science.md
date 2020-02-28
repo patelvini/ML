@@ -1,4 +1,4 @@
-# Introduction to Data Science
+﻿# Introduction to Data Science
 
 **Data science** is a way to try and discover `hidden patterns` in `raw data`. To achieve this goal, it makes use of several algorithms, [machine learning(ML)](https://data-flair.training/blogs/machine-learning-tutorial/) principles, and scientific methods. The insights it retrieves from data lie in forms structured and unstructured. So in a way, this is like [data mining](https://data-flair.training/blogs/data-mining-tutorial/). Data science encompasses all- data analysis, statistics, and machine learning.
 
@@ -17,13 +17,11 @@
 
 # Concept of Artificial Intelligence
 
-![](https://www.nopsec.com/wp-content/uploads/Artificial-Intelligence-Machine-Learning-Deep-Learning3.png)
+![](https://miro.medium.com/max/4096/1*tGe-OV89iSqPKeW3ArSVwQ.png)
 
 ### what is Artificial Intelligence ?
 
-![](https://www.datamation.com/imagesvr_ce/9138/Artificial-Intelligence.png)
-
-Artificial intelligence (AI) is an area of computer science that emphasizes the creation of intelligent machines that work and react like humans. Some of the activities computers with  
+Artificial intelligence (AI) is an area of computer science that emphasizes the creation of intelligent machines that work and react like humans.
 
 The core problems of artificial intelligence include programming computers for certain traits such as:
 - Knowledge
@@ -33,6 +31,8 @@ The core problems of artificial intelligence include programming computers for c
 - Learning
 - Planning
 - Ability to manipulate and move objects
+
+![](https://www.datamation.com/imagesvr_ce/9138/Artificial-Intelligence.png)
 
 ### AI in the Real World
 There is no shortage of compelling use cases for AI. Here are some leading examples:
@@ -55,14 +55,17 @@ Airlines, hotels, and rental car companies use AI to forecast demand and adapt p
 # Concept of Machine Learning
 
 ### What is Machine Learning?
+
+![](https://miro.medium.com/max/398/1*BfvKeP4ykqi4J4C5g4EZzg.png)
+
 Machine Learning is the most popular technique of predicting the future or classifying information to help people in making necessary decisions. Machine Learning algorithms are trained over instances or examples through which they learn from past experiences and also analyze the historical data. Therefore, as it trains over the examples, again and again, it is able to identify patterns in order to make predictions about the future.
 
-![](https://d2h0cx97tjks2p.cloudfront.net/blogs/wp-content/uploads/sites/2/2017/07/what-is-machine-learning.jpg)
+![](https://www.reveantivirus.com/blog/wp-content/uploads/2018/12/shutterstock_1110900704.jpg)
 
 ### How does Machine Learning Work?
 With an exponential increase in data, there is a need for having a system that can handle this massive load of data. Machine Learning models like Deep Learning allow the vast majority of data to be handled with an accurate generation of predictions. Machine Learning has revolutionized the way we perceive information and the various insights we can gain out of it.
 
-![](https://d2h0cx97tjks2p.cloudfront.net/blogs/wp-content/uploads/sites/2/2019/07/How-machine-learning-works.jpg)
+![](https://www.edureka.co/blog/content/ver.1554792280/uploads/2019/04/Supervised-Learning-Introduction-To-Machine-Learning-Edureka.png)
 
 These machine learning algorithms use the patterns contained in the training data to perform classification and future predictions. Whenever any new input is introduced to the ML model, it applies its learned patterns over the new data to make future predictions. Based on the final accuracy, one can optimize their models using various standardized approaches. In this way, Machine Learning model learns to adapt to new examples and produce better results.
 
@@ -81,12 +84,6 @@ We can define the machine learning workflow in 5 stages.
 
 #### Gathering Data
 The process of gathering data depends on the type of project we desire to make, if we want to make an ML project that uses real-time data, then we can build an IoT system that using different sensors data. The data set can be collected from various sources such as a file, database, sensor and many other such sources but the collected data cannot be used directly for performing the analysis process as there might be a lot of missing data, extremely large values, unorganized text data or noisy data. Therefore, to solve this problem Data Preparation is done.
-
-![](https://miro.medium.com/max/846/1*0dJNCFj1hjLjmsqBhJ0_2w.png)
-
-![](https://miro.medium.com/max/384/1*z55Hi1HtLpdBhhPQbS9rZQ.gif)
-
-![](https://miro.medium.com/max/770/1*gh-vDoSQEWrl_KgLjybYXA.jpeg)
 
 We can also use some free data sets which are present on the internet. [Kaggle](https://www.kaggle.com/) and UCI Machine learning Repository are the repositories that are used the most for making Machine learning models. Kaggle is one of the most visited websites that is used for practicing machine learning algorithms, they also host competitions in which people can participate and get to test their knowledge of machine learning.
 
