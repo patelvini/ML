@@ -10,3 +10,5 @@
 - [workflow of machine learning project](https://towardsdatascience.com/workflow-of-a-machine-learning-project-ec1dba419b94)
 
 - [Machine learning libraries](https://www.zeolearn.com/magazine/python-libraries-for-machine-learning)
+
+- [types of ML](https://subscription.packtpub.com/book/big_data_and_business_intelligence/9781788629355/1/ch01lvl1sec12/types-of-learning)
