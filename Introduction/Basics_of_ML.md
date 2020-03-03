@@ -177,6 +177,6 @@ i.e. for the above example:
 #### Evaluation
 Model Evaluation is an integral part of the model development process. It helps to find the best model that represents our data and how well the chosen model will work in the future.
 
-![](ML_Model.PNG)
+![](ML_model.PNG)
 
 To improve the model we might tune the hyper-parameters of the model and try to improve the accuracy and also looking at the confusion matrix to try to increase the number of true positives and true negatives.
