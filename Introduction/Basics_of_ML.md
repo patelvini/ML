@@ -45,7 +45,7 @@ In the table below, we summarize the difference between machine learning and dee
 
 # Types of ML
 
-![](Types_of_ML.PNG)
+![](https://social.technet.microsoft.com/wiki/cfs-file.ashx/__key/communityserver-wikis-components-files/00-00-00-00-05/7002.5_5F00_1.PNG)
 
 ### Supervised Learning
 
@@ -100,10 +100,14 @@ We can define the machine learning workflow in 5 stages.
 #### 1. Gathering data
 The process of gathering data depends on the type of project we desire to make, if we want to make an ML project that uses real-time data, then we can build an IoT system that using different sensors data. The data set can be collected from various sources such as a file, database, sensor and many other such sources but the collected data cannot be used directly for performing the analysis process as there might be a lot of missing data, extremely large values, unorganized text data or noisy data. Therefore, to solve this problem Data Preparation is done.
 
+<<<<<<< HEAD
+We can also use some free data sets which are present on the internet. [Kaggle](http://www.kaggle.com/) and [UCI Machine learning](https://archive.ics.uci.edu/ml/datasets.html) Repository are the repositories that are used the most for making Machine learning models.
+=======
 ![](https://storage.googleapis.com/kaggle-competitions/kaggle/3136/media/kaggle-transparent.svg)
 ![](https://miro.medium.com/max/630/0*ZEt7WEWx1CUeUKrd.png)
 
 We can also use some free data sets which are present on the internet. [Kaggle](http://www.kaggle.com/) and [UCI Machine learning](https://archive.ics.uci.edu/ml) Repository are the repositories that are used the most for making Machine learning models.
+>>>>>>> ccf37cdb9e0d7eb7c6d4b29fe168a1ad7e275243
 
 #### 2. Data pre-processing
 Data pre-processing is one of the most important steps in machine learning. It is the most important step that helps in building machine learning models more accurately. In machine learning, there is an **80/20 rule**. Every data scientist should spend 80% time for data pre-processing and 20% time to actually perform the analysis.
@@ -157,15 +161,29 @@ You train the classifier using `‘training data set’`, tune the parameters us
 ![](https://miro.medium.com/max/2330/1*CeALK-1lzIWNJ7wN9DStlw.png)
 
 Once the data is divided into the 3 given segments we can start the training process.
+
 In a data set, a training set is implemented to build up a model, while a test (or validation) set is to validate the model built. Data points in the training set are excluded from the test (validation) set. Usually, a data set is divided into a training set, a validation set (some people use ‘test set’ instead) in each iteration, or divided into a training set, a validation set and a test set in each iteration.
-The model uses any one of the models that we had chosen in step 3/ point 3. Once the model is trained we can use the same trained model to predict using the testing data i.e. the unseen data. Once this is done we can develop a confusion matrix, this tells us how well our model is trained. A confusion matrix has 4 parameters, which are ‘True positives’, ‘True Negatives’, ‘False Positives’ and ‘False Negative’. We prefer that we get more values in the True negatives and true positives to get a more accurate model. The size of the Confusion matrix completely depends upon the number of classes.
 
-True positives : These are cases in which we predicted TRUE and our predicted output is correct.
-True negatives : We predicted FALSE and our predicted output is correct.
-False positives : We predicted TRUE, but the actual predicted output is FALSE.
-False negatives : We predicted FALSE, but the actual predicted output is TRUE.
+The model uses any one of the models that we had chosen in step 3/ point 3. Once the model is trained we can use the same trained model to predict using the testing data i.e. the unseen data. Once this is done we can develop a confusion matrix, this tells us how well our model is trained. A confusion matrix has 4 parameters, which are **‘True positives’**, **‘True Negatives’**, **‘False Positives’** and **‘False Negative’**. We prefer that we get more values in the True negatives and true positives to get a more accurate model. The size of the Confusion matrix completely depends upon the number of classes.
+
+![](https://miro.medium.com/max/386/1*GMlSubndVt3g7FmeQjpeMA.png)
+
+- **True positives :** These are cases in which we predicted TRUE and our predicted output is correct.
+- **True negatives :** We predicted FALSE and our predicted output is correct.
+- **False positives :** We predicted TRUE, but the actual predicted output is FALSE.
+- **False negatives :** We predicted FALSE, but the actual predicted output is TRUE.
+
 We can also find out the accuracy of the model using the confusion matrix.
-Accuracy = (True Positives +True Negatives) / (Total number of classes)
-i.e. for the above example:
-Accuracy = (100 + 50) / 165 = 0.9090 (90.9% accuracy)
 
+>Accuracy = (True Positives +True Negatives) / (Total number of classes)
+
+i.e. for the above example:
+
+>Accuracy = (100 + 50) / 165 = 0.9090 (90.9% accuracy)
+
+#### Evaluation
+Model Evaluation is an integral part of the model development process. It helps to find the best model that represents our data and how well the chosen model will work in the future.
+
+![](ML_Model.PNG)
+
+To improve the model we might tune the hyper-parameters of the model and try to improve the accuracy and also looking at the confusion matrix to try to increase the number of true positives and true negatives.
