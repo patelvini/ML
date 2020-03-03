@@ -102,8 +102,6 @@ The process of gathering data depends on the type of project we desire to make, 
 
 We can also use some free data sets which are present on the internet. [Kaggle](http://www.kaggle.com/) and [UCI Machine learning](https://archive.ics.uci.edu/ml/datasets.html) Repository are the repositories that are used the most for making Machine learning models.
 
-We can also use some free data sets which are present on the internet. [Kaggle](http://www.kaggle.com/) and [UCI Machine learning](https://archive.ics.uci.edu/ml) Repository are the repositories that are used the most for making Machine learning models.
-
 #### 2. Data pre-processing
 Data pre-processing is one of the most important steps in machine learning. It is the most important step that helps in building machine learning models more accurately. In machine learning, there is an **80/20 rule**. Every data scientist should spend 80% time for data pre-processing and 20% time to actually perform the analysis.
 
