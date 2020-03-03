@@ -101,9 +101,6 @@ We can define the machine learning workflow in 5 stages.
 The process of gathering data depends on the type of project we desire to make, if we want to make an ML project that uses real-time data, then we can build an IoT system that using different sensors data. The data set can be collected from various sources such as a file, database, sensor and many other such sources but the collected data cannot be used directly for performing the analysis process as there might be a lot of missing data, extremely large values, unorganized text data or noisy data. Therefore, to solve this problem Data Preparation is done.
 
 ![](https://storage.googleapis.com/kaggle-competitions/kaggle/3136/media/kaggle-transparent.svg)
-
-![](https://archive.ics.uci.edu/ml/assets/logo.gif)
-
 ![](https://miro.medium.com/max/630/0*ZEt7WEWx1CUeUKrd.png)
 
 We can also use some free data sets which are present on the internet. [Kaggle](http://www.kaggle.com/) and [UCI Machine learning](https://archive.ics.uci.edu/ml/datasets.html) Repository are the repositories that are used the most for making Machine learning models.
