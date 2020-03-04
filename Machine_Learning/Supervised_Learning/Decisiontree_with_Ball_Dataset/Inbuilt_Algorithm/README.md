@@ -19,22 +19,30 @@
 
 ### Initial script
 
-We had import DecisionTreeClassifier class from sklearn.tree and call the fit() method along with our training data.
-
 ```
 from sklearn import tree
+import pickle
+```
+
+create model using DecisionTreeClassifier() class from sklearn.tree and save model using the dumps() function
+```
 model = tree.DecisionTreeClassifier()
-model.fit(data,target_label)
+saved_model = pickle.dumps(model)
 ```
 
-Now that we have trained our algorithm, it’s time to make some predictions. To do so, we will use our test data. To make predictions on the test data, execute the following script:
+Again load the saved model usig loads() function of pickle and call the fit() method along with our training data.
+
+Now that we have trained our algorithm, it’s time to make some predictions. 
+
+To do so, we will use our test data. To make predictions on the test data, execute the following script:
 
 ```
-result = model.predict([[99,0]])
+dt_from_pickle = pickle.loads(saved_model)
+dt_from_pickle.fit(data,target_label)
+result = dt_from_pickle.predict([[99,0]])
 ```
 
 ### Output
 
 ![](Output.PNG)
-
 
