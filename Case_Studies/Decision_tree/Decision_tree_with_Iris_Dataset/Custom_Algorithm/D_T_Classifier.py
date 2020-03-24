@@ -90,7 +90,7 @@ def buildTree(df, tree = None):
 	for value in att_Value:
 		subtable = get_subtable(df, node, value)
 
-		cl_Value, counts = np.unique(subtable['Label'], return_counts = True)
+		cl_Value, counts = np.unique(subtable[df.keys()[-1]], return_counts = True)
 
 		if len(counts) == 1:
 			tree[node][value] = cl_Value[0]  # checking purity of subset
@@ -113,12 +113,12 @@ def predict(input_data, tree):
 	t_values = []
 
 	for i in tree_values:
-		t_values.append(int(i)) 
+		t_values.append(float(i)) 
 
 	for nodes in tree.keys():
-		prediction = 'Cricket'
+		prediction = 'Verginica'
 		
-		value = int(input_data[nodes])
+		value = float(input_data[nodes])
 
 		if value in t_values:
 			tree = tree[nodes][value]
@@ -133,9 +133,9 @@ def predict(input_data, tree):
 
 def train_test_split(dataset):
 
-	training_data = dataset.iloc[:100].reset_index(drop = True)
+	training_data = dataset.iloc[:120].reset_index(drop = True)
 
-	testing_data = dataset.iloc[100:].reset_index(drop = True)
+	testing_data = dataset.iloc[120:].reset_index(drop = True)
 
 	return training_data, testing_data
 
@@ -159,14 +159,16 @@ if __name__ == '__main__':
 	for i in range(3):
 		path = os.path.dirname(path)
 
-	data = pd.read_csv( path + '/Datasets/Ball_Dataset.csv', names = ['Weight', 'Surface', 'Label'])
+	data = pd.read_csv( path + '/Datasets/IRIS.csv')
+
+	data.sort_values(by = 'sepal_width', inplace = True)
 
 	training_data = train_test_split(data)[0]
 	testing_data = train_test_split(data)[1]
 
 	tree = buildTree(training_data)
 
-	filename = path + '/Model/D_T_classifier_ball.pkl'
+	filename = path + '/Model/D_T_classifier_iris.pkl'
 	
 	pickle.dump(tree, open(filename, 'wb'))
 	
@@ -180,7 +182,7 @@ if __name__ == '__main__':
 		test(testing_data, loaded_model)
 	elif cmd.args.predict:
 		loaded_model = pickle.load(open(filename,'rb'))
-		input_data = {'Weight' : cmd.args.weight, 'Surface': cmd.args.surface}
+		input_data = {'sepal_length': cmd.args.sepal_length, 'sepal_width' : cmd.args.sepal_width, 'petal_length': cmd.args.petal_length, 'petal_width': cmd.args.petal_width}
 		input_data = pd.Series(input_data)
 		prediction = predict(input_data, loaded_model)
 		print(prediction)
@@ -189,7 +191,9 @@ if __name__ == '__main__':
 		print(" --train for training.")
 		print(" --test for check the accuracy.")
 		print(" --predict for predict label for given input")
-		print(" -w for input weight.")
-		print(" -s for input surface.")
+		print(" -sl for input sepal_length.")
+		print(" -sw for input sepal_width.")
+		print(" -pl for input petal_length.")
+		print(" -pw for input petal_width.")
 
 
