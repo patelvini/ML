@@ -1,20 +1,20 @@
 ﻿# KNN Algorithm
 
-#### What is KNN Algorithm?
+### What is KNN Algorithm?
 
  **K nearest neighbors or KNN** Algorithm is a simple algorithm which uses the entire dataset in its `training phase`. Whenever a `prediction` is required for an `unseen data` instance, it searches through the entire training dataset for `k-most` similar instances and the data with the most similar instance is finally returned as the `prediction`.
  
-#### Where to use KNN
+### Where to use KNN
 
 KNN is often used in simple recommendation systems, image recognition technology, and decision-making models. It is the algorithm companies like Netflix or Amazon use in order to recommend different movies to watch or books to buy. Netflix even launched the Netflix Prize competition, awarding $1 million to the team that created the most accurate recommendation algorithm!
 
 You might be wondering, **_“But how do these companies do this?”_** Well, these companies will apply KNN on a data set gathered about the movies you’ve watched or the books you’ve bought on their website. These companies will then input your available customer data and compare that to other customers who have watched similar movies or bought similar books. This data point will then be classified as a certain profile based on their past using KNN. The movies and books recommended will then depend on how the algorithm classifies that data point.
 
-#### How does a KNN Algorithm work?
+### How does a KNN Algorithm work?
 
 The k-nearest neighbors algorithm uses a very simple approach to perform classification. When tested with a new example, it looks through the training data and finds the k training examples that are closest to the new example. It then assigns the most common class label (among those k-training examples) to the test example.
 
-#### What does ‘k’ in kNN Algorithm represent?
+### What does ‘k’ in kNN Algorithm represent?
 
 >  k in kNN algorithm represents the number of nearest neighbor points which are voting for the new test data’s class.
 
