@@ -4,6 +4,8 @@
 
  **K nearest neighbors or KNN** Algorithm is a simple algorithm which uses the entire dataset in its `training phase`. Whenever a `prediction` is required for an `unseen data` instance, it searches through the entire training dataset for `k-most` similar instances and the data with the most similar instance is finally returned as the `prediction`.
  
+Algorithm suggests that **_if you’re similar to your neighbours, then you are one of them_**. For example, if apple looks more similar to peach, pear, and cherry (fruits) than monkey, cat or a rat (animals), then most likely apple is a fruit.
+ 
 ### Where to use KNN
 
 KNN is often used in simple recommendation systems, image recognition technology, and decision-making models. It is the algorithm companies like Netflix or Amazon use in order to recommend different movies to watch or books to buy. Netflix even launched the Netflix Prize competition, awarding $1 million to the team that created the most accurate recommendation algorithm!
