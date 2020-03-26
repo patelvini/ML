@@ -3,7 +3,6 @@ import numpy as np
 import pickle
 import os
 import operator
-from sklearn.datasets import load_iris
 import random
 import Commands as cmd
 import math
@@ -12,18 +11,18 @@ from scipy.spatial import distance
 class KNNClassifier:
 
 	def train_test_split(self,dataset):
-		training_data = dataset.iloc[:70].reset_index(drop = True)
-		testing_data = dataset.iloc[70:].reset_index(drop = True)
+		training_data = dataset.iloc[:10].reset_index(drop = True)
+		testing_data = dataset.iloc[10:].reset_index(drop = True)
 		trainingSet = []
 		test_classes = []
 		test_data = []
 		for index, rows in training_data.iterrows():
-			my_list = [rows.sepal_length, rows.sepal_width, rows.petal_length, rows.petal_width, rows.species]
+			my_list = [rows.Weight, rows.Surface, rows.Label]
 			trainingSet.append(my_list)
 
 		for index, rows in testing_data.iterrows():
-			my_list = [rows.sepal_length, rows.sepal_width, rows.petal_length, rows.petal_width]
-			test_classes.append(rows.species)
+			my_list = [rows.Weight, rows.Surface]
+			test_classes.append(rows.Label)
 			test_data.append(my_list)
 		return trainingSet,test_data,test_classes
 
@@ -94,12 +93,16 @@ class KNNClassifier:
 		return accuracy
 
 if __name__ == '__main__':
-	
+
 	path = os.getcwd()
+
 	for i in range(3):
 		path = os.path.dirname(path)
-	data = pd.read_csv( path + '/Datasets/IRIS.csv')
-	data.sort_values(by = 'sepal_width', inplace = True)
+	data = pd.read_csv( path + '/Datasets/Ball_Dataset.csv', names = ['Weight', 'Surface', 'Label'])
+
+	data = data.replace(to_replace = "Rough", value = 0)
+	data = data.replace(to_replace = "Smooth", value = 1)
+
 	KNN = KNNClassifier()
 	training_data, testing_data, test_classes =  KNN.train_test_split(data)
 	k = 3
@@ -117,7 +120,7 @@ if __name__ == '__main__':
 		print("\nAccuracy = ", accuracy, "%")
 	elif cmd.args.predict:
 		trainSet = KNN.fit(training_data)
-		testInstance = [cmd.args.sepal_length,cmd.args.sepal_width,cmd.args.petal_length,cmd.args.petal_width]
+		testInstance = [cmd.args.weight,cmd.args.surface]
 		neighbors = KNN.getKNeighbors(trainSet, testInstance, k)
 		print("Nearest Neighbors = ")
 		for neighbor in neighbors:
@@ -129,7 +132,5 @@ if __name__ == '__main__':
 		print(" --train for training.")
 		print(" --test for check the accuracy.")
 		print(" --predict for predict label for given input")
-		print(" -sl for input sepal_length.")
-		print(" -sw for input sepal_width.")
-		print(" -pl for input petal_length.")
-		print(" -pw for input petal_width.")
+		print(" -w for input weight.")
+		print(" -s for input surface.")
