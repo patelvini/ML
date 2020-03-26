@@ -12,3 +12,5 @@
 - [Machine learning libraries](https://www.zeolearn.com/magazine/python-libraries-for-machine-learning)
 
 - [types of ML](https://subscription.packtpub.com/book/big_data_and_business_intelligence/9781788629355/1/ch01lvl1sec12/types-of-learning)
+
+- [KNN Algorithm](https://medium.com/@avulurivenkatasaireddy/k-nearest-neighbors-and-implementation-on-iris-data-set-f5817dd33711)
