@@ -11,8 +11,8 @@ from scipy.spatial import distance
 class KNNClassifier:
 
 	def train_test_split(self,dataset):
-		training_data = dataset.iloc[:10].reset_index(drop = True)
-		testing_data = dataset.iloc[10:].reset_index(drop = True)
+		training_data = dataset.iloc[:100].reset_index(drop = True)
+		testing_data = dataset.iloc[100:].reset_index(drop = True)
 		trainingSet = []
 		test_classes = []
 		test_data = []
