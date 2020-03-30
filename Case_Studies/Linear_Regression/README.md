@@ -31,23 +31,26 @@ Accuracy and Goodness of Fit|	Measured by loss, R squared, Adjusted R squared et
 ### Where is linear regression used ?
 
 1. **Evaluating Trends and Sales Estimates** 
+   
    ![](https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2018/06/Impact-of-Price-Change-454x300.jpg)
    Linear regressions can be used in business to evaluate trends and make estimates or forecasts.
-    **For example,** if a companyís sales have increased steadily every month for the past few years, conducting a linear analysis on the sales data with monthly sales on the y-axis and time on the x-axis would produce a line that that depicts the upward trend in sales. After creating the trend line, the company could use the slope of the line to forecast sales in future months.
+    **For example,** if a company‚Äôs sales have increased steadily every month for the past few years, conducting a linear analysis on the sales data with monthly sales on the y-axis and time on the x-axis would produce a line that that depicts the upward trend in sales. After creating the trend line, the company could use the slope of the line to forecast sales in future months.
     
 2. **Analyzing the Impact of Price Changes**
+    
     ![](https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2018/06/sales-forecast-450x300.jpg)
     Linear regression can also be used to analyze the effect of pricing on consumer behaviour.
     **For example,** if a company changes the price on a certain product several times, it can record the quantity it sells for each price level and then performs a linear regression with quantity sold as the dependent variable and price as the explanatory variable. The result would be a line that depicts the extent to which consumers reduce their consumption of the product as prices increase, which could help guide future pricing decisions.
     
 3. **Assessing Risk**
+    
     ![](https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2018/06/Risk-Analysis-367x180.jpg)
     Linear regression can be used to analyze risk.
     **For example,** A health insurance company might conduct a linear regression plotting number of claims per customer against age and discover that older customers tend to make more health insurance claims. The results of such an analysis might guide important business decisions made to account for risk.
 
 ## Least Square Method - Finding the best fit line
 
-**Least squares is a statistical method used to determine the best fit line or the regression line by minimizing the sum of squares created by a mathematical function. The ìsquareî here refers to squaring the distance between a data point and the regression line. The line with the minimum value of the sum of square is the best-fit regression line.** 
+**Least squares is a statistical method used to determine the best fit line or the regression line by minimizing the sum of squares created by a mathematical function. The ‚Äúsquare‚Äù here refers to squaring the distance between a data point and the regression line. The line with the minimum value of the sum of square is the best-fit regression line.** 
 
 
 Regression Line, **y = mx+c** where,
@@ -67,11 +70,11 @@ x= Independent Variable ; c = y-Intercept
 
 ## R Square Method - Goodness of Fit
 
-**Rñsquared** value is the statistical measure to show how close the data are to the fitted regression line.
+**R‚Äìsquared** value is the statistical measure to show how close the data are to the fitted regression line.
 
 y = actual value
 
-y Ø = mean value of y
+y ¬Ø = mean value of y
 
 yp =  predicted value of y
 
