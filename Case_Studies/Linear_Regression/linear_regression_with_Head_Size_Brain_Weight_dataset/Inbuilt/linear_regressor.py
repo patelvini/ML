@@ -3,6 +3,7 @@ import os
 import pandas as pd
 from sklearn.metrics import r2_score
 import pickle
+import matplotlib.pyplot as plt
 
 path = os.getcwd()
 for i in range(3):
@@ -44,4 +45,10 @@ for i in range(len(Y_pred)):
  
 # Calculating R2 Score
 print("\nR-Squared value : ",r2_score(Y_test, Y_pred))
- 
+
+plt.plot(X_test,Y_pred,color='red',label='Linear Regression')
+plt.scatter(X_train,Y_train,c='b',label='Scatter Plot')
+plt.xlabel("Head Size")
+plt.ylabel("Brain Weight")
+plt.legend()
+plt.show() 

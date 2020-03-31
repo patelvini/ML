@@ -102,10 +102,20 @@ if __name__ == '__main__':
 
 	m,c = linear_regressor.calculateSlopeAndIntercept(X_train, Y_train)
 
+	print("Slope of regression line : ", m)
+	print("Y-intercept of the line : ", c)
+
 	predictions = linear_regressor.predict(X_test, m, c)
 
-	print(predictions)
+	print("Predictions : ",predictions)
 
 	r2 =linear_regressor.calculate_R_square(Y_test, predictions)
 
 	print("\nR-Squared value : ",r2)
+
+	plt.plot(X_test,predictions,color='red',label='Linear Regression')
+	plt.scatter(X_train,Y_train,c='b',label='Scatter Plot')
+	plt.xlabel("Head Size")
+	plt.ylabel("Brain Weight")
+	plt.legend()
+	plt.show()
