@@ -37,6 +37,10 @@ reg = pickle.load(open(filename,'rb'))
 # Fitting training data
 reg = reg.fit(X_train, Y_train)
 
+# print the coefficients
+print("Slope : ",reg.coef_)
+print("Y-intercept : " ,reg.intercept_)
+
 # Y Prediction
 Y_pred = list(reg.predict(X_test))
 
