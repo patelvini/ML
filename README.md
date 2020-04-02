@@ -14,3 +14,7 @@
 - [types of ML](https://subscription.packtpub.com/book/big_data_and_business_intelligence/9781788629355/1/ch01lvl1sec12/types-of-learning)
 
 - [KNN Algorithm](https://medium.com/@avulurivenkatasaireddy/k-nearest-neighbors-and-implementation-on-iris-data-set-f5817dd33711)
+
+- [Evaluation metrics for regression model](https://www.dataquest.io/blog/understanding-regression-error-metrics/)
+
+- [Linear regression and multiple linear regression guide](https://towardsdatascience.com/a-beginners-guide-to-linear-regression-in-python-with-scikit-learn-83a8f7ae2b4f)
