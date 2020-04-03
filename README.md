@@ -18,3 +18,5 @@
 - [Evaluation metrics for regression model](https://www.dataquest.io/blog/understanding-regression-error-metrics/)
 
 - [Linear regression and multiple linear regression guide](https://towardsdatascience.com/a-beginners-guide-to-linear-regression-in-python-with-scikit-learn-83a8f7ae2b4f)
+
+- [logistic regression](https://medium.com/@anishsingh20/logistic-regression-in-python-423c8d32838b)
