@@ -23,4 +23,6 @@
 
 - [logistic regression from scratch in python](https://towardsdatascience.com/building-a-logistic-regression-in-python-301d27367c24)
 
+-[logistic regression from scratch in python](https://predictiveprogrammer.com/machine-learning-from-scratch-logistic-regression/)
+
 
