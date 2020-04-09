@@ -1,111 +1,101 @@
 import numpy as np 
 import pandas as pd 
 import os
+from sklearn.model_selection import train_test_split
+from scipy.optimize import fmin_tnc
+from sklearn.metrics import confusion_matrix
+from sklearn.metrics import classification_report
 
 
 class LogisticRegression:
 
-	def __init__(self, lr = 0.01, n_iter= 100):
-		self.lr = lr
-		self.n_iter = n_iter
+	def sigmoid(self, x):
+		return 1 / (1+np.exp(-x))
 
+	def net_input(self, theta, x):
+		return np.dot(x, theta)
 
-	def train_test_split(self,dataset):
+	def probability(self, theta, x):
+		return self.sigmoid(self.net_input(theta, x))
 
-		training_data = dataset.iloc[:1200].reset_index(drop = True)
-		testing_data = dataset.iloc[1200:].reset_index(drop = True)
+	def cost_function(self, theta, x, y):
+		m = x.shape[0]
+		total_cost = -(1/m) * np.sum(y * np.log(self.probability(theta, x)) + (1-y)*np.log(1-self.probability(theta, x)))
 
-		X_train = training_data[['Passengerid','Age','Fare','Sex','sibsp','zero','Pclass','Embarked']]
-		y_train = training_data['Survived']
-		
-		X_test = testing_data[['Passengerid','Age','Fare','Sex','sibsp','zero','Pclass','Embarked']]
-		y_test = testing_data['Survived']
+		return total_cost
 
-		return X_train.values, y_train.values, X_test.values, y_test.values
+	def gradient(self, theta, x, y):
+		m = x.shape[0]
+		return (1/m)* np.dot(x.T, self.sigmoid(self.net_input(theta, x)) - y)
 
-	def sigmoid(self, X):
-		y = 1/(1 + np.exp(-X))
-		return y
+	def fit(self, x, y, theta):
+		opt_wights = fmin_tnc(func=self.cost_function, x0 = theta, fprime=self.gradient, args=(x, y.flatten()))
+		return opt_wights[0]
 
-	def linear(self, X):
-		X = np.dot(X, self.weights) + self.bias
-		return X
+	def predict(self, x):
+		theta = parameters[:,np.newaxis]
+		return self.probability(theta, x)
 
-	def initialize_weights(self, X):
-		self.weights = np.random.rand(X.shape[1],1)
-		self.bias = np.zeros((1,))
+	def evaluation_metrics(self, cnf_matrix):
+		TP = cnf_matrix[0][0]
+		FP = cnf_matrix[0][1]
+		FN = cnf_matrix[1][0]
+		TN = cnf_matrix[1][1]
 
-	def normalize(self, X):
-		X = (X - self.x_mean) / self.x_stddev
-		return X
-
-	def fit(self, X_train, y_train):
-
-		self.initialize_weights(X_train)
-
-		self.x_mean = X_train.mean(axis=0).T
-
-		self.x_stddev = X_train.std(axis=0).T
-        
-        # normalize data
-
-		X_train = self.normalize(X_train)
-
-        # Run gradient descent for n iterations
-		for i in range(self.n_iter):
-            # make normalized predictions
-			probs = self.sigmoid(self.linear(X_train))
-
-			print(probs)
-			diff = probs - y_train
-
-			print(diff)
-
-            # d/dw and d/db of mse
-			delta_w = np.mean(diff * X_train, axis=0, keepdims=True).T
-			delta_b = np.mean(diff)
-
-            # update weights
-			self.weights = self.weights - self.lr * delta_w
-			self.bias = self.bias - self.lr * delta_b
-		return self
-
-
-	def predict(self, X):
-		y_pred = self.sigmoid(X)
-		if y_pred >= 0.5:
-			return 1
-		else:
-			return 0
-
-	def accuracy(self, y_test, y_pred):
-		return np.mean(y_test == y_pred)
+		accuracy = (TP + TN)/(TP + TN + FP + FN)
+		precision = (TP)/(TP + FP)
+		recall = (TP)/(TP + FN)
+		return accuracy, precision, recall
 
 
 if __name__ == '__main__':
 
+	# load data
 	path = os.getcwd()
-	
 	for i in range(3):
 		path = os.path.dirname(path)
-	
 	data = pd.read_excel( path + '/Datasets/Titanic_Dataset.xlsx')
 
-	data.sort_values(by = 'Age', inplace = True)
+	# X = feature values, all the columns except the last column
+	X = data.iloc[:,:-1] 
 
-	# print(data)
+	# y = target column, Survived for this example
+	y = data.iloc[:,-1]
 
-	log_regressor = LogisticRegression()
+	# prepare data for training
 
-	X_train, y_train, X_test, y_test = log_regressor.train_test_split(data)
+	X = np.c_[np.ones((X.shape[0], 1)), X]
+	y = y[:, np.newaxis]
+	theta = np.zeros((X.shape[1], 1))
 
-	log_regressor.fit(X_train, y_train)
+	X_train, X_test, y_train, y_test = train_test_split(X, y, train_size=0.7, random_state=1)
 
-	y_pred = log_regressor.predict(X_test)
+	log_reg = LogisticRegression()
 
-	accuracy = log_regressor.accuracy(y_test, y_pred)
+	threhold = 0.5
+	parameters = log_reg.fit(X_train, y_train, theta)
 
-	print("accuracy : ", accuracy*100,"%")
+	print("\n\nparameters : ",parameters)
+
+	predicted_classes = (log_reg.predict(X_test) >= threhold).astype(int)
+
+	clf_report = classification_report(y_test, predicted_classes)
+
+	print("\nclassification_report : \n\n",clf_report)
+
+	cnf_matrix = confusion_matrix(y_test,predicted_classes)
+
+	print("\nConfusion Matrix : \n\n",cnf_matrix)
 
 
+	accuracy, precision, recall = log_reg.evaluation_metrics(cnf_matrix)
+
+	print("\naccuracy : ",round( accuracy * 100 , 3), "%")
+	print("\nprecision : ",round( precision * 100, 3), "%")
+	print("\nrecall : ",round( recall * 100, 3), "%")
+
+
+
+
+	
 
