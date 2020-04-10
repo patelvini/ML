@@ -5,6 +5,7 @@ from sklearn.model_selection import train_test_split
 from scipy.optimize import fmin_tnc
 from sklearn.metrics import confusion_matrix
 from sklearn.metrics import classification_report
+from sklearn import metrics
 
 
 class LogisticRegression:
@@ -37,14 +38,14 @@ class LogisticRegression:
 		return self.probability(theta, x)
 
 	def evaluation_metrics(self, cnf_matrix):
-		TP = cnf_matrix[0][0]
+		TN = cnf_matrix[0][0]
 		FP = cnf_matrix[0][1]
 		FN = cnf_matrix[1][0]
-		TN = cnf_matrix[1][1]
+		TP = cnf_matrix[1][1]
 
 		accuracy = (TP + TN)/(TP + TN + FP + FN)
-		precision = (TP)/(TP + FP)
-		recall = (TP)/(TP + FN)
+		precision = TP/(TP + FP)
+		recall = TP/(TP + FN)
 		return accuracy, precision, recall
 
 
@@ -93,6 +94,7 @@ if __name__ == '__main__':
 	print("\naccuracy : ",round( accuracy * 100 , 3), "%")
 	print("\nprecision : ",round( precision * 100, 3), "%")
 	print("\nrecall : ",round( recall * 100, 3), "%")
+
 
 
 
