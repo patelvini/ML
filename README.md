@@ -23,6 +23,12 @@
 
 - [logistic regression from scratch in python](https://towardsdatascience.com/building-a-logistic-regression-in-python-301d27367c24)
 
--[logistic regression from scratch in python](https://predictiveprogrammer.com/machine-learning-from-scratch-logistic-regression/)
+- [logistic regression from scratch in python](https://predictiveprogrammer.com/machine-learning-from-scratch-logistic-regression/)
+
+- [Elbow method 1](https://pythonprogramminglanguage.com/kmeans-elbow-method/)
+
+- [Elbow method 2](https://medium.com/analytics-vidhya/how-to-determine-the-optimal-k-for-k-means-708505d204eb)
+
+- [K-means Algorithm from scratch](https://www.analyticsvidhya.com/blog/2019/08/comprehensive-guide-k-means-clustering/)
 
 
