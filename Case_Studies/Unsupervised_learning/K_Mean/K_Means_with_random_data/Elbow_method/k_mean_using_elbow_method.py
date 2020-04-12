@@ -1,9 +1,11 @@
 import numpy as np 
 from numpy.linalg import norm
 import matplotlib.pyplot as plt 
+from random import randint
+from sklearn.cluster import KMeans
+import seaborn as sns
 
-
-class KMeans:
+class Kmeans:
 
 	def __init__(self, n_clusters, max_iter=100, random_state = 123):
 
@@ -61,12 +63,39 @@ class KMeans:
 
 if __name__ == '__main__':
 
-	X1 = np.array([12, 20, 28, 18, 29, 33, 24, 45, 45, 52, 51, 52, 55, 53, 55, 61, 64, 69, 72])
-	Y1 = np.array([39, 36, 30, 52, 54, 46, 55, 59, 63, 70, 66, 63, 58, 23, 14, 8, 19, 7, 24])
+	X1 = np.random.randint(100,size=300)
+	Y1 = np.random.randint(100, size=300)
 
 	X = np.array(list(zip(X1, Y1))).reshape(len(X1), 2)
 
-	k_mean = KMeans(3)
+	wcss = []
+
+	for i in range(1, 11):
+		k_mean = KMeans(n_clusters = i, init='k-means++', random_state = 42)
+		k_mean.fit(X)
+
+		wcss.append(k_mean.inertia_)
+
+	# plot graph for elbow point
+
+	# plt.figure(figsize=(10,5))
+	# sns.lineplot(range(1, 11), wcss,marker='o',color='red')
+	# plt.title('The Elbow Method')
+	# plt.xlabel('Number of clusters')
+	# plt.ylabel('WCSS')
+	# plt.show()
+
+	# exit()
+
+
+	k_mean = Kmeans(4)
+
+	initial_centroids = k_mean.initialize_centroids(X)
+	# plt.scatter(X[:, 0], X[:, 1] )
+	# plt.scatter(initial_centroids[:,0], initial_centroids[:,1], marker="x", color='r')
+
+	# plt.show()
+	# exit()
 
 	centroids, labels = k_mean.fit(X)
 	
