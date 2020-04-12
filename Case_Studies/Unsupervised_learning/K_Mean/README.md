@@ -54,5 +54,33 @@ Any distance metric like the Euclidean Distance or the Manhattan Distance can be
 
 ![](https://miro.medium.com/max/1664/1*8wV1j-klQA1xFvfaNXuVzg.png)
 
+### The Silhouette Method
+
+> The silhouette value measures how similar a point is to its own cluster (cohesion) compared to other clusters (separation).
+
+The range of the Silhouette value is between **+1 and -1**. A **high value is desirable** and indicates that the point is placed in the correct cluster. If many points have a negative Silhouette value, it may indicate that we have created too many or too few clusters.
+The Silhouette Value s(i) for each data point i is defined as follows:
+
+![](https://miro.medium.com/max/590/1*vFXfyIjIjI_kbZNWODiuxQ.jpeg)
+
+_**Note**_: 
+s(i) is defined to be equal to zero if i is the only point in the cluster. This is to prevent the number of clusters from increasing significantly with many single-point clusters.
+
+Here, **a(i)** is the measure of similarity of the point i to its own cluster. It is measured as the average distance of i from other points in the cluster.
+
+![](https://miro.medium.com/max/806/1*OFOXVdMIwldl8diJvscw_A.jpeg)
+
+Similarly, **b(i)** is the measure of dissimilarity of i from points in other clusters.
+
+![](https://miro.medium.com/max/586/1*fGgqT3IHwpEOiDbCtN5dAQ.jpeg)
+
+**d(i, j)** is the distance between points i and j. Generally, Euclidean Distance is used as the distance metric.
+
+The Silhouette Score reaches its **global maximum at the optimal k**. This should ideally appear as a peak in the Silhouette Value-versus-k plot.
+
+![](https://miro.medium.com/max/778/1*Otg9XRLPqOjb80Png6B9Og.png)
+
+There is a clear peak at k = 3. Hence, it is optimal.
+
 
 
