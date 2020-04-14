@@ -4,4 +4,4 @@
 
 - [spider data for text to sql](https://github.com/taoyds/spider/)
 
-- [text to sql small examples](https://github.com/lokeshlal/TextToSql/blob/master)
+- [text to sql small examples](https://github.com/lokeshlal/TextToSql/)
